@@ -69,3 +69,11 @@ where
         compare: move |x: &T, y: &T| f(x).cmp(&f(y)),
     }
 }
+
+pub fn concatenate<I1, I2, E>(a: I1, b: I2) -> Vec<E>
+where
+    I1: IntoIterator<Item = E>,
+    I2: IntoIterator<Item = E>,
+{
+    a.into_iter().chain(b.into_iter()).collect::<Vec<_>>()
+}

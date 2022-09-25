@@ -138,6 +138,7 @@ impl DinicGraph {
     }
 }
 
+#[cfg(test)]
 mod test {
     use crate::graphs::flows::dinic::DinicGraph;
 

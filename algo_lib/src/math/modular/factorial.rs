@@ -30,4 +30,20 @@ where
             self.fact[n] * self.inverse_fact[n - k] * self.inverse_fact[k]
         }
     }
+
+    pub fn factorial(&self, n: usize) -> Mod {
+        self.fact[n]
+    }
+
+    pub fn inverse_combinations(&self, n: usize, k: usize) -> Mod {
+        if k > n {
+            0.into()
+        } else {
+            self.inverse_fact[n] * self.fact[n - k] * self.fact[k]
+        }
+    }
+
+    pub fn inverse_factorial(&self, n: usize) -> Mod {
+        self.inverse_fact[n]
+    }
 }

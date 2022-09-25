@@ -1,3 +1,4 @@
+pub mod cmp;
 pub mod euclid;
-pub mod sieve;
 pub mod modular;
+pub mod sieve;
