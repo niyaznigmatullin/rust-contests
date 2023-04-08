@@ -1,6 +1,6 @@
 
 pub struct UnionFind {
-    p: Vec<usize>,
+    pub p: Vec<usize>,
 }
 
 impl UnionFind {

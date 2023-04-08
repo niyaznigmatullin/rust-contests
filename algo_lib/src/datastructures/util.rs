@@ -1,6 +1,7 @@
 use std::cmp::Ordering;
 use std::cmp::Ordering::Greater;
 use std::iter::Peekable;
+use std::ops::Sub;
 
 pub struct MergeSorted<T, A: Iterator<Item = T>, B: Iterator<Item = T>, F> {
     a: Peekable<A>,
@@ -76,4 +77,12 @@ where
     I2: IntoIterator<Item = E>,
 {
     a.into_iter().chain(b.into_iter()).collect::<Vec<_>>()
+}
+
+pub fn subtract_one<I, T>(a: I) -> Vec<T>
+where
+    I: IntoIterator<Item = T>,
+    T: Sub<T, Output = T> + From<u8>,
+{
+    a.into_iter().map(|x| x - 1.into()).collect()
 }

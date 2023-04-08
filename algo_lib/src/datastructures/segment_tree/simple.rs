@@ -25,9 +25,13 @@ where
     }
 
     pub fn set(&mut self, index: usize, value: T) {
+        self.change(index, |pos| *pos = value);
+    }
+
+    pub fn change(&mut self, index: usize, f: impl FnOnce(&mut T)) {
         let mut i = index + self.n;
         let t = &mut self.t;
-        t[i] = value;
+        f(&mut t[i]);
         while i > 1 {
             i >>= 1;
             t[i] = T::join(&t[i + i], &t[i + i + 1]);
