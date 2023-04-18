@@ -11,7 +11,6 @@ use algo_lib::io::output::output;
 use algo_lib::math::euclid::gcd;
 use algo_lib::{out, out_line};
 use std::cmp::{max, min, Ordering};
-use std::ops::Range;
 
 #[derive(Clone, Debug)]
 struct TreeNodeDelta {
@@ -407,42 +406,42 @@ impl Default for TreeNode {
     }
 }
 
-struct NaiveTree {
-    a: Vec<i64>,
-}
-
-impl NaiveTree {
-    fn new(n: usize) -> Self {
-        NaiveTree { a: vec![0; n] }
-    }
-
-    fn get_sum(&self, range: Range<usize>) -> i64 {
-        range.map(|x| self.a[x]).sum()
-    }
-
-    fn add(&mut self, range: Range<usize>, value: i64) {
-        for index in range {
-            self.a[index] += value;
-        }
-    }
-
-    fn get_gcd(&self, range: Range<usize>) -> u64 {
-        range
-            .map(|x| self.a[x].unsigned_abs())
-            .fold(0, |a, b| gcd(a, b))
-    }
-
-    fn min(&mut self, range: Range<usize>, value: i64) {
-        for index in range {
-            self.a[index] = min(self.a[index], value);
-        }
-    }
-    fn max(&mut self, range: Range<usize>, value: i64) {
-        for index in range {
-            self.a[index] = max(self.a[index], value);
-        }
-    }
-}
+// struct NaiveTree {
+//     a: Vec<i64>,
+// }
+//
+// impl NaiveTree {
+//     fn new(n: usize) -> Self {
+//         NaiveTree { a: vec![0; n] }
+//     }
+//
+//     fn get_sum(&self, range: Range<usize>) -> i64 {
+//         range.map(|x| self.a[x]).sum()
+//     }
+//
+//     fn add(&mut self, range: Range<usize>, value: i64) {
+//         for index in range {
+//             self.a[index] += value;
+//         }
+//     }
+//
+//     fn get_gcd(&self, range: Range<usize>) -> u64 {
+//         range
+//             .map(|x| self.a[x].unsigned_abs())
+//             .fold(0, |a, b| gcd(a, b))
+//     }
+//
+//     fn min(&mut self, range: Range<usize>, value: i64) {
+//         for index in range {
+//             self.a[index] = min(self.a[index], value);
+//         }
+//     }
+//     fn max(&mut self, range: Range<usize>, value: i64) {
+//         for index in range {
+//             self.a[index] = max(self.a[index], value);
+//         }
+//     }
+// }
 
 // fn test() {
 //     return;

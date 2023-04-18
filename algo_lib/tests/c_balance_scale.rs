@@ -3,7 +3,7 @@
 use algo_lib::io::input::Input;
 use algo_lib::io::output::output;
 use algo_lib::math::modular::factorial::Factorial;
-use algo_lib::math::modular::primitive::{Modular, ModularType};
+use algo_lib::math::modular::primitive::ModularType;
 use algo_lib::{out, out_line};
 use std::cmp::min;
 

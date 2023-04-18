@@ -1,6 +1,5 @@
 //{"name":"E. Долгий путь домой","group":"Codeforces - Codeforces Round #816 (Div. 2)","url":"https://codeforces.com/contest/1715/problem/E?locale=ru","interactive":false,"timeLimit":3000,"tests":[{"input":"3 1 2\n1 3 1\n","output":"0 1 1\n"},{"input":"4 3 1\n1 2 3\n2 4 5\n3 4 7\n","output":"0 1 4 6\n"},{"input":"2 1 1\n2 1 893746473\n","output":"0 1\n"},{"input":"5 5 2\n2 1 33\n1 5 93\n5 3 48\n2 3 21\n4 2 1\n","output":"0 1 2 2 3\n"}],"testType":"single","input":{"type":"stdin","fileName":null,"pattern":null},"output":{"type":"stdout","fileName":null,"pattern":null},"languages":{"java":{"taskClass":"EDolgiiPutDomoi"}}}
 
-use std::cmp::min;
 use algo_lib::io::input::Input;
 use algo_lib::io::output::output;
 use algo_lib::{out, out_line};

@@ -1,6 +1,6 @@
 //{"name":"b_ice_skates","group":"Manual","url":"","interactive":false,"timeLimit":2000,"tests":[{"input":"","output":""}],"testType":"single","input":{"type":"stdin","fileName":null,"pattern":null},"output":{"type":"stdout","fileName":null,"pattern":null},"languages":{"java":{"taskClass":"b_ice_skates"}}}
 
-use std::cmp::{max, min};
+use std::cmp::max;
 use algo_lib::io::input::Input;
 use algo_lib::io::output::output;
 use algo_lib::{out, out_line};
