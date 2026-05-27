@@ -12,7 +12,7 @@ impl<T> PSegTreeNode<T>
 where
     T: SegmentTreeNode,
 {
-    fn new_leaf(value: T) -> Self {
+    pub fn new_leaf(value: T) -> Self {
         Self {
             value,
             left: None,
@@ -20,7 +20,7 @@ where
         }
     }
 
-    fn new_from_children(left: Rc<Self>, right: Rc<Self>) -> Self {
+    pub fn new_from_children(left: Rc<Self>, right: Rc<Self>) -> Self {
         let value = T::join(&left.value, &right.value);
         Self {
             value,
